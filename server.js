@@ -25,7 +25,7 @@ const io = new Server(server, {
 const BLOCKS_FILE = "./world_blocks.json";
 const MESSAGES_FILE = "./world_messages.json";
 
-function loadJSON(file, fallback) {
+
   if (!fs.existsSync(file)) {
     // Se o arquivo não existe, cria com array vazio
     fs.writeFileSync(file, JSON.stringify(fallback, null, 2));
@@ -40,7 +40,7 @@ function loadJSON(file, fallback) {
   }
 }
 
-function saveJSON(file, data) {
+
   try {
     fs.writeFileSync(file, JSON.stringify(data, null, 2));
     console.log(`✅ ${file} salvo com ${data.length} itens`);
@@ -279,3 +279,4 @@ server.listen(PORT, () => {
   console.log(`📊 ${blocks.length} blocos carregados`);
   console.log(`💬 ${messages.length} mensagens carregadas`);
 });
+
